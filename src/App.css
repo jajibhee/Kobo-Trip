@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  z-index: 1;
+  width: 100%;
+}
+.progress {
+  text-align: center;
+}
+.progress > li {
+  width: 14.28%;
+  float: left;
+  list-style: none;
+  font-size: 1.2rem;
+  position: relative;
+  font-weight: 700;
+}
+
+.progress li::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 0.2rem solid rgb(248, 246, 246);
+  display: block;
+  text-align: center;
+  margin: 0 auto 32px auto;
+  background-color: #e7b05f;
+  border-radius: 50%;
+}
+
+/* //connector */
+.progress li::after {
+  content: " ";
+  height: 5px;
+  background-color: #e7b05f;
+  position: absolute;
+  top: 10px;
+  left: -50%;
+  width: 100%;
+  z-index: -1;
+}
+.progress li:first-child::after {
+  content: none;
+}
+
+/* select all but the first four */
+.progress li:nth-child(n + 5)::after,
+.progress li:nth-child(n + 5)::before {
+  background-color: #252d7e;
+  color: #252d7e;
+}
+.progress li.done:nth-child(n)::after,
+.progress li.done:nth-child(n)::before {
+  background-color: #e7b05f;
+  color: #fff;
+}
+
+.progress li.done:last-child::after {
+  background-color: #e7b05f;
+  color: #fff;
+}
+
+.progress li.done:last-child::before {
+  box-shadow: 0 0 0 10px hsl(36, 74%, 64%, 1), 0 0 0 15px hsl(36, 74%, 84%, 1);
+  background-color: #fff;
+  border: 0.2rem solid #252d7e;
+}
+.progress li.currently:nth-child(5)::after {
+  background-color: #e7b05f;
+  color: #fff;
+}
+
+.progress li.currently:nth-child(5)::before {
+  box-shadow: 0 0 0 10px hsl(36, 74%, 64%, 1), 0 0 0 15px hsl(36, 74%, 84%, 1);
+  background-color: #fff;
+  border: 0.2rem solid #252d7e;
+}
+/* 0 0 0 10px rgba(231, 176, 95, 0.5),
+    0 0 0 15px rgba(231, 176, 95, 1); */
+
+.date-details {
+  font-size: 1.2rem;
+  font-weight: 100;
+}
