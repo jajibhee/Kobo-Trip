@@ -64,9 +64,6 @@ class App extends Component {
   };
 
   render() {
-    // const items = this.state.trips.map((item, key) =>
-    //   <div key={item.id}>{item.status}</div>
-    // );
     return (
       <div>
         <Trip trips={this.state.statusHistory} />
