@@ -2,16 +2,15 @@
   margin: 0;
   padding: 0;
 }
-.container {
-  z-index: 2;
-  width: 100%;
-}
+
 .progress {
+  margin-bottom: 5rem;
+  padding: 3rem;
   display: flex;
   text-align: center;
+  background-color: #dfdfde;
 }
 .progress > li {
-  width: 14.28%;
   list-style: none;
   font-size: 1.2rem;
   position: relative;
@@ -19,15 +18,17 @@
 }
 
 .progress li::before {
-  content: "";
-  width: 20px;
-  height: 20px;
-  border: 0.2rem solid rgb(248, 246, 246);
-  display: block;
-  text-align: center;
-  margin: 0 auto 32px auto;
   background-color: #e7b05f;
+  border: 0.2rem solid rgb(248, 246, 246);
   border-radius: 50%;
+  content: "";
+  display: block;
+  height: 20px;
+  margin: 0 auto 32px auto;
+  position: relative;
+  text-align: center;
+  width: 20px;
+  z-index: 1;
 }
 
 /* //connector */
@@ -39,15 +40,15 @@
   top: 10px;
   left: -50%;
   width: 100%;
-  z-index: -1;
+  z-index: 0;
 }
 .progress li:first-child::after {
   content: none;
 }
 
 /* select all but the first four */
-.progress li:nth-child(n + 5)::after,
-.progress li:nth-child(n + 5)::before {
+.progress li:nth-child(n)::after,
+.progress li:nth-child(n)::before {
   background-color: #252d7e;
   color: #252d7e;
 }
@@ -57,28 +58,17 @@
   color: #fff;
 }
 
-.progress li.done:last-child::after {
-  background-color: #e7b05f;
-  color: #fff;
-}
-
-.progress li.done:last-child::before {
-  box-shadow: 0 0 0 10px hsl(36, 74%, 64%, 1), 0 0 0 15px hsl(36, 74%, 84%, 1);
+.progress li:last-child::before {
   background-color: #fff;
   border: 0.2rem solid #252d7e;
-}
-.progress li.currently:nth-child(5)::after {
-  background-color: #e7b05f;
-  color: #fff;
+  box-shadow: 0 0 0 10px hsl(36, 74%, 64%, 1), 0 0 0 15px hsl(36, 74%, 84%, 1);
 }
 
-.progress li.currently:nth-child(5)::before {
-  box-shadow: 0 0 0 10px hsl(36, 74%, 64%, 1), 0 0 0 15px hsl(36, 74%, 84%, 1);
-  background-color: #fff;
+.progress > li:last-child::after {
+  /* background-color: #fff;
   border: 0.2rem solid #252d7e;
+  box-shadow: 0 0 0 10px hsl(36, 74%, 64%, 1), 0 0 0 15px hsl(36, 74%, 84%, 1); */
 }
-/* 0 0 0 10px rgba(231, 176, 95, 0.5),
-    0 0 0 15px rgba(231, 176, 95, 1); */
 
 .date-details {
   font-size: 1.2rem;

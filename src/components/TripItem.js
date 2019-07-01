@@ -1,24 +1,12 @@
 import React, { Component } from 'react'
 
-export class TripItem extends Component {
-  render() {
-    return (
-      <div style={tripStyle}>
-        <div className="container">
-          <ul className="progress">
-            <li>{this.props.trip.status}
-              <p className="date-details">{this.props.trip.date}</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    )
-  }
+const TripItem = (props) => {
+  let { trip } = props
+  return (
+    <li className={trip.isDone ? 'done' : 'list'}>{trip.status}
+      <p className="date-details">{trip.date}</p>
+    </li>
+  )
 }
-const tripStyle = {
-  display: 'flex',
-  alignItems: 'center',
-  height: '50vh',
-  background: '#ccc'
-}
+
 export default TripItem

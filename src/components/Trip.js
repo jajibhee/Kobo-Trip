@@ -7,9 +7,8 @@ class Trip extends Component {
     return (
       <ul className="progress">
         {this.props.trips.map((trip) => (
-          <li>{trip.status}
-            <p className="date-details">{trip.date}</p>
-          </li>
+          <TripItem trip={trip} />
+
         ))}
       </ul>
 
