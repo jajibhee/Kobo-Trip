@@ -4,11 +4,16 @@ import TripItem from "./TripItem";
 
 class Trip extends Component {
   render() {
+    return (
+      <ul className="progress">
+        {this.props.trips.map((trip) => (
+          <li>{trip.status}
+            <p className="date-details">{trip.date}</p>
+          </li>
+        ))}
+      </ul>
 
-    return this.props.trips.map((trip) => (
-
-      <TripItem />
-    ))
+    )
 
   }
 }

@@ -33,6 +33,13 @@ class App extends Component {
     statusHistory: [
       {
         _id: "5d00e4294a57c8000d4d27c5",
+        status: "Accepted",
+        date: "2019-06-12T11:38:17.876Z",
+        userId: 8635,
+        userType: "admin"
+      },
+      {
+        _id: "5d00e4294a57c8000d4d27c5",
         status: "Positioned",
         date: "2019-06-12T11:38:17.876Z",
         userId: 8635,
@@ -58,6 +65,20 @@ class App extends Component {
         date: "2019-06-17T23:00:00.000Z",
         userId: 8635,
         userType: "admin"
+      },
+      {
+        _id: "5d0a5ae6c0b537000d88a4a0",
+        status: "At Destination",
+        date: "2019-06-17T23:00:00.000Z",
+        userId: 8635,
+        userType: "admin"
+      },
+      {
+        _id: "5d0a5ae6c0b537000d88a4a0",
+        status: "Delivered",
+        date: "2019-06-17T23:00:00.000Z",
+        userId: 8635,
+        userType: "admin"
       }
     ],
     createdDate: "2019-06-11T13:27:02.164Z"
@@ -65,11 +86,14 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Trip trips={this.state.statusHistory} />
-        <div style={{ margin: '3rem' }}></div>
-        <TripCompleted new={newObject} />
-      </div>
+      <>
+        <div style={{ margin: '3rem' }}>
+          <Trip trips={this.state.statusHistory} />
+        </div>
+        <div style={{ margin: '3rem' }}>
+          <TripCompleted trips={this.state.statusHistory} />
+        </div>
+      </>
     );
   }
 }
