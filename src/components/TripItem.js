@@ -1,12 +1,15 @@
-import React, { Component } from 'react'
+import React, { Fragment } from 'react'
+import Trip from './Trip';
 
-const TripItem = (props) => {
-  let { trip } = props
+const TripItem = ({ trip }) => {
   return (
-    <li className={trip.isDone ? 'done' : 'list'}>{trip.status}
-      <p className="date-details">{trip.date}</p>
-    </li>
+    <Fragment>
+      <Trip status={trip.statusHistory} />
+
+
+    </Fragment>
   )
 }
+
 
 export default TripItem

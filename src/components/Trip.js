@@ -1,21 +1,15 @@
-import React, { Component } from 'react'
-import TripItem from "./TripItem";
+import React, { Fragment } from 'react'
+import Item from './Item';
 
+const Trip = ({ status }) => {
+  return (
+    <ul className="progress" >
 
-class Trip extends Component {
-  render() {
-    return (
-      <ul className="progress">
-        {this.props.trips.map((trip) => (
-          <TripItem trip={trip} />
+      {status.map(item =>
+        <Item history={item} />)}
+    </ul>
 
-        ))}
-      </ul>
-
-    )
-
-  }
+  )
 }
-
 
 export default Trip
