@@ -29,9 +29,23 @@ const tripObject = [
       },
       {
         _id: "5d0a5ae6c0b537000d88a4a0",
-        status: "Transporting",
+        status: "En-route",
         date: "2019-06-17T23:00:00.000Z",
         userId: 8635,
+        userType: "admin"
+      },
+      {
+        _id: "5d0a5ae6c0b537000d88a4a",
+        status: "At destination",
+        date: "2019-06-17T23:00:00.000Z",
+        userId: 8631,
+        userType: "admin"
+      },
+      {
+        _id: "5d0a5ae6c0b537000d88a4",
+        status: "Delivered",
+        date: "2019-06-17T23:00:00.000Z",
+        userId: 8636,
         userType: "admin"
       }
     ],
