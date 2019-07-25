@@ -2,7 +2,7 @@ import React from 'react'
 
 const Accepted = ({ history }) => {
   return (
-    <li>
+    <li className="progress-status">
       {history.status}
       <p className="date-details">{history.userId}</p>
     </li>

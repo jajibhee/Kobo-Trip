@@ -7,6 +7,13 @@ const tripObject = [
     status: "Transporting",
     statusHistory: [
       {
+        _id: "5d00e4294a57c8000d47c5",
+        status: "Accepted",
+        date: "2019-06-12T11:38:17.876Z",
+        userId: 8615,
+        userType: "admin"
+      },
+      {
         _id: "5d00e4294a57c8000d4d27c5",
         status: "Positioned",
         date: "2019-06-12T11:38:17.876Z",
@@ -53,11 +60,32 @@ const tripObject = [
   }
 ];
 
+const completed = {
+  "status": "Delivered",
+  "statusHistory": [
+    {
+      "_id": "5cdec3fc01e7d8000c917cc0",
+      "status": "Loaded",
+      "date": "2019-08-04T00:00:00.000Z",
+      "userId": 703,
+      "userType": "admin"
+    },
+    {
+      "_id": "5cdec3fc01e7d8000c917cc1",
+      "status": "Delivered",
+      "date": "2019-08-04T00:00:00.000Z",
+      "userId": 703,
+      "userType": "admin"
+    }
+  ],
+  "createdDate": "2019-08-04T00:00:00.000Z"
+}
+
 class App extends Component {
   render() {
     return (
       <Fragment>
-        < TripList trips={tripObject} />
+        < TripList trips={tripObject} delivered={completed} />
       </Fragment>
 
     );

@@ -7,7 +7,6 @@ const TripList = ({ trips }) => {
       {trips.map(trip =>
         <TripItem trip={trip} />)}
 
-
     </div>
   )
 }

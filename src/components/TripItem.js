@@ -3,11 +3,10 @@ import Trip from './Trip';
 
 const TripItem = ({ trip }) => {
   return (
-    <Fragment>
+    <div className="list">
       <Trip status={trip.statusHistory} />
-
-
-    </Fragment>
+      
+    </div>
   )
 }
 
